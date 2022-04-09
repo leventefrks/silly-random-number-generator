@@ -1365,7 +1365,7 @@
             @click="onRandomNumber"
             class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300 bg-purple-500 hover:bg-purple-400 text-white"
           >
-            Woo, here's your number!
+            Woohoo, here's your number!
           </button>
           <button
             v-if="randomNumber"
@@ -1405,6 +1405,7 @@ const Random = {
       min: null,
       max: null,
       isError: false,
+      isToggle: false,
     };
   },
 
@@ -1415,6 +1416,8 @@ const Random = {
       const max = parseInt(this.max, 10);
 
       if (
+        min < 0 ||
+        max < 0 ||
         !min ||
         !max ||
         min > max ||
@@ -1458,7 +1461,7 @@ export default Random;
 }
 
 .shake {
-  animation: shake 2s ease infinite;
+  animation: shake 5s ease infinite;
 }
 
 @keyframes shake {
