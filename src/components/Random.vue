@@ -1422,7 +1422,20 @@ const Random = {
       const min = parseInt(this.min, 10);
       const max = parseInt(this.max, 10);
 
-      if (
+      if (this.isInvalid(min, max)) {
+        this.isError = true;
+        this.randomNumber = null;
+        this.isToggle = false;
+        return;
+      }
+
+      this.generateNumber(min, max);
+      this.isToggle = true;
+      this.isError = false;
+    },
+
+    isInvalid(min, max) {
+      return (
         min < 0 ||
         max < 0 ||
         !min ||
@@ -1431,16 +1444,11 @@ const Random = {
         min === max ||
         min > 1000 ||
         max > 1000
-      ) {
-        this.isError = true;
-        this.randomNumber = null;
-        this.isToggle = false;
-        return;
-      }
+      );
+    },
 
+    generateNumber(min, max) {
       this.randomNumber = Math.ceil(Math.random() * (max - min)) + min;
-      this.isToggle = true;
-      this.isError = false;
     },
 
     onReset() {
