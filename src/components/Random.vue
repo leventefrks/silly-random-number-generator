@@ -1337,7 +1337,7 @@
             <h3
               v-if="randomNumber"
               class="text-5xl text-green-400 font-semibold"
-              :class="{ grow: randomNumber }"
+              :class="{ grow: isToggle }"
             >
               {{ randomNumber }}
             </h3>
@@ -1414,6 +1414,11 @@ const Random = {
   methods: {
     onRandomNumber() {
       this.randomNumber = null;
+
+      setTimeout(() => {
+        this.isToggle = false;
+      }, 200);
+
       const min = parseInt(this.min, 10);
       const max = parseInt(this.max, 10);
 
@@ -1429,10 +1434,12 @@ const Random = {
       ) {
         this.isError = true;
         this.randomNumber = null;
+        this.isToggle = false;
         return;
       }
 
       this.randomNumber = Math.floor(Math.random() * (max - min)) + min;
+      this.isToggle = true;
       this.isError = false;
     },
 
@@ -1441,6 +1448,7 @@ const Random = {
       this.max = null;
       this.randomNumber = null;
       this.isError = null;
+      this.isToggle = false;
     },
   },
 };
