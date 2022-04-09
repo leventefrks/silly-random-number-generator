@@ -1387,7 +1387,7 @@
             class="mt-6 text-center text-md sm:text-xl font-semibold text-red-600"
             :class="{ shake: isError }"
           >
-            Oooops, something went wrong! Try again!
+            Oooops, Fanni! something went wrong! Try again!
           </p>
         </div>
       </div>
