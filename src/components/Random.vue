@@ -1382,7 +1382,7 @@
             Good luck with your studies, Fanni! 😀
           </p>
           <p
-            v-else
+            v-if="isError"
             class="mt-6 text-center text-xl font-semibold text-red-600"
             :class="{ shake: isError }"
           >
