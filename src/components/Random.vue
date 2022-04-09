@@ -1325,15 +1325,15 @@
   </svg>
 
   <div
-    class="min-h-screen py-6 flex flex-col items-center justify-center sm:py-12 fixed z-50 inset-0 overflow-y-auto h-full w-full px-4"
+    class="min-h-screen flex flex-col items-center justify-center fixed z-50 inset-0 overflow-y-auto h-full w-full"
   >
-    <div class="py-3 sm:max-w-xl mx-auto">
-      <div class="min-w-1xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
-        <div class="px-8 sm:px-16 py-4 sm:py-7">
-          <h2 class="mb-4 text-xl md:text-3xl text-center text-white">
+    <div class="sm:max-w-xl mx-auto">
+      <div class="min-w-xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
+        <div class="px-4 sm:px-16 py-4 sm:py-7 space-y-4">
+          <h2 class="text-xl md:text-3xl text-center text-white">
             Generate your random number!
           </h2>
-          <div class="mb-4 text-center text-white">
+          <div class="text-center text-white">
             <h3
               v-if="randomNumber"
               class="text-5xl text-green-400 font-semibold"
@@ -1345,7 +1345,7 @@
               It's time to study! YAY! 😛
             </h3>
           </div>
-          <div class="w-40 mx-auto mb-4 rounded-md bg-gray-50">
+          <div class="w-40 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
               placeholder="Min. number"
@@ -1353,7 +1353,7 @@
               class="w-full border-none bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300"
             />
           </div>
-          <div class="w-40 mx-auto mb-8 rounded-md bg-gray-50">
+          <div class="w-40 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
               placeholder="Max. number"
@@ -1361,7 +1361,6 @@
               class="w-full border-none bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300"
             />
           </div>
-
           <button
             @click="onRandomNumber"
             class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300 bg-purple-400 hover:bg-purple-500 text-purple-700"
@@ -1369,8 +1368,9 @@
             Woo, here's your number!
           </button>
           <button
+            v-if="randomNumber"
             @click="onReset"
-            class="w-full mt-4 px-4 sm:px-9 py-2 sm:py-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-400 hover:bg-red-500 text-red-700"
+            class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-400 hover:bg-red-500 text-red-700"
           >
             Reset!
           </button>
