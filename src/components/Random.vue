@@ -1363,14 +1363,15 @@
           </div>
           <button
             @click="onRandomNumber"
-            class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300 bg-purple-400 hover:bg-purple-500 text-purple-700"
+            class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300 bg-purple-500 hover:bg-purple-400 text-white"
           >
             Woo, here's your number!
           </button>
           <button
             v-if="randomNumber"
             @click="onReset"
-            class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-400 hover:bg-red-500 text-red-700"
+            class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-500 hover:bg-red-400 text-white"
+            :class="{ 'fade-in': randomNumber }"
           >
             Reset!
           </button>
