@@ -1331,7 +1331,7 @@
       <div class="min-w-xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
         <div class="px-4 sm:px-16 py-4 sm:py-7 space-y-4">
           <h2 class="text-xl md:text-3xl text-center text-white">
-            Generate your random number!
+            Generate your random number
           </h2>
           <div class="text-center text-white">
             <h3
@@ -1438,7 +1438,7 @@ const Random = {
         return;
       }
 
-      this.randomNumber = Math.floor(Math.random() * (max - min)) + min;
+      this.randomNumber = Math.ceil(Math.random() * (max - min)) + min;
       this.isToggle = true;
       this.isError = false;
     },
