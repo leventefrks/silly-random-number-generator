@@ -1373,7 +1373,7 @@
             class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-500 hover:bg-red-400 text-white"
             :class="{ 'fade-in': randomNumber }"
           >
-            Reset!
+            Reset
           </button>
           <p
             v-if="!isError && randomNumber"
@@ -1384,7 +1384,7 @@
           </p>
           <p
             v-if="isError"
-            class="mt-6 text-center text-xl font-semibold text-red-600"
+            class="mt-6 text-center text-md sm:text-xl font-semibold text-red-600"
             :class="{ shake: isError }"
           >
             Oooops, something went wrong! Try again!
@@ -1460,6 +1460,7 @@ export default Random;
 .shake {
   animation: shake 2s ease infinite;
 }
+
 @keyframes shake {
   0%,
   100% {
@@ -1483,12 +1484,13 @@ export default Random;
 .grow {
   animation: grow 500ms ease;
 }
+
 @keyframes grow {
   from {
     transform: scale(0);
   }
   to {
-    transform: scale(1.4);
+    transform: scale(1.7);
   }
 }
 </style>
