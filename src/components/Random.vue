@@ -1374,9 +1374,8 @@
           >
             Reset!
           </button>
-
           <p
-            v-if="!isError"
+            v-if="!isError && randomNumber"
             class="mt-4 text-center text-white"
             :class="{ 'fade-in': randomNumber }"
           >
