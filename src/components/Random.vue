@@ -1484,92 +1484,94 @@ export default Random;
   50%,
   70%,
   90% {
-    transform: translateX(-15px);
+    transform: translateX(-10px);
   }
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(15px);
+    transform: translateX(10px);
   }
 }
 
-.grow {
-  animation: grow 500ms ease;
-}
-
-@keyframes grow {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1.7);
-  }
-}
-
-.woman {
-  animation: woman-move 5s ease infinite alternate;
-}
-
-@keyframes woman-move {
-  0% {
-    transform: translateY(0) rotate(0deg);
+@media only screen and (min-device-width: 1024px) {
+  .grow {
+    animation: grow 500ms ease;
   }
 
-  100% {
-    transform: translateY(-10px) rotate(-1deg);
+  @keyframes grow {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1.7);
+    }
   }
-}
 
-.crocodile {
-  animation: crocodile-move 3s ease-in infinite alternate;
-}
-
-@keyframes crocodile-move {
-  0% {
-    transform: translateY(0);
+  .woman {
+    animation: woman-move 5s ease infinite alternate;
   }
-  100% {
-    transform: translateY(35px);
-  }
-}
 
-.figure {
-  animation: figure-move 5s ease-in infinite alternate;
-}
+  @keyframes woman-move {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
 
-@keyframes figure-move {
-  0% {
-    transform: rotate(0);
+    100% {
+      transform: translateY(-10px) rotate(-1deg);
+    }
   }
-  100% {
-    transform: rotate(3deg);
-  }
-}
 
-.bat-move {
-  animation: bat-move 3s ease-in infinite alternate;
-}
-
-@keyframes bat-move {
-  0% {
-    transform: translateY(0);
+  .crocodile {
+    animation: crocodile-move 3s ease-in infinite alternate;
   }
-  100% {
-    transform: translateY(15px);
-  }
-}
 
-.trumpet {
-  animation: trumpet-move 3s ease-in infinite alternate;
-}
-
-@keyframes trumpet-move {
-  0% {
-    transform: translateY(0);
+  @keyframes crocodile-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(35px);
+    }
   }
-  100% {
-    transform: translateY(-15px);
+
+  .figure {
+    animation: figure-move 5s ease-in infinite alternate;
+  }
+
+  @keyframes figure-move {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .bat-move {
+    animation: bat-move 3s ease-in infinite alternate;
+  }
+
+  @keyframes bat-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(15px);
+    }
+  }
+
+  .trumpet {
+    animation: trumpet-move 3s ease-in infinite alternate;
+  }
+
+  @keyframes trumpet-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-15px);
+    }
   }
 }
 </style>
