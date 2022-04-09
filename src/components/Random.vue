@@ -639,7 +639,7 @@
       d="M843.2 146.5a8.2 8.2 0 01-3.7-5.8l-.6-4c0-.2-.2-.3-.4-.3s-.4.1-.4.3l-.6 4a8.2 8.2 0 01-3.7 5.8l-.5.3-.2.3c0 .1.1.2.2.3l.5.3a8.2 8.2 0 013.7 5.8l.6 4c0 .2.2.3.4.3s.4-.1.4-.3l.6-4a8.2 8.2 0 013.7-5.8l.5-.3c.1-.1.2-.2.2-.3l-.2-.3z"
       data-name="Layer 16"
     ></path>
-    <g data-name="Layer 15">
+    <g data-name="Layer 15" class="woman">
       <circle cx="1427.5" cy="531.4" r="98.7" fill="#66bcff"></circle>
       <circle cx="1427.5" cy="531.4" r="98.7" fill="#66bcff"></circle>
       <circle cx="1427.5" cy="531.4" r="98.7" fill="#66bcff"></circle>
@@ -866,7 +866,7 @@
         d="M1485.8 587.1L1483.2 582.7"
       ></path>
     </g>
-    <g data-name="Layer 14">
+    <g data-name="Layer 14" class="trumpet">
       <path
         fill="#ffc619"
         d="M1259.3 840.4a34 34 0 00-13.9-.1c-.8-5.7-5.4-11.2-16.9-21.7-14.8-13.5-18.6-30.4-18.6-47.5l-41 33.3-9.8 41.2c14.7-3.5 29.6-5.7 45.1.6l5.2 2.4a5.1 5.1 0 01.8 8.5c-4.5 3.5-7.6 6.7-7.9 6.9a105.9 105.9 0 00-10.4 11.7c-17.2 23.5-12.2 42.3 9.6 41.1 19.1-1 44.5-16.9 58.9-35.6s15.5-36.8-1.1-40.8zm-4.7 33.7c-13.5 17.4-38.2 32.7-48.7 32.7s-7.6-13.5 6.6-30.2 34.1-30.4 44.6-30.4 9.8 12-2.5 27.9z"
@@ -1507,51 +1507,69 @@ export default Random;
   }
 }
 
+.woman {
+  animation: woman-move 5s ease infinite alternate;
+}
+
+@keyframes woman-move {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
 .crocodile {
-  animation: crocodile-move 3s ease-in infinite;
+  animation: crocodile-move 3s ease-in infinite alternate;
 }
 
 @keyframes crocodile-move {
   0% {
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(15px);
-  }
   100% {
-    transform: translateY(0);
+    transform: translateY(35px);
   }
 }
 
 .figure {
-  animation: figure-move 5s ease-in infinite;
+  animation: figure-move 5s ease-in infinite alternate;
 }
 
 @keyframes figure-move {
   0% {
     transform: rotate(0);
   }
-  50% {
-    transform: rotate(3deg);
-  }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(3deg);
   }
 }
 
 .bat-move {
-  animation: bat-move 3s ease-in infinite;
+  animation: bat-move 3s ease-in infinite alternate;
 }
 
 @keyframes bat-move {
   0% {
     transform: translateY(0);
   }
-  50% {
+  100% {
     transform: translateY(15px);
   }
-  100% {
+}
+
+.trumpet {
+  animation: trumpet-move 3s ease-in infinite alternate;
+}
+
+@keyframes trumpet-move {
+  0% {
     transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
   }
 }
 </style>
