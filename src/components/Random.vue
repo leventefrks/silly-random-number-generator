@@ -103,7 +103,7 @@
       d="M1525.8 824.6a34.7 34.7 0 00-66.9-12.1 33.3 33.3 0 00-7.8-.9 36.3 36.3 0 00-27.8 13h102.5z"
       data-name="Layer 23"
     ></path>
-    <g data-name="Layer 22">
+    <g data-name="Layer 22" class="figure">
       <path
         fill="#4452f2"
         d="M284.3 406.3c-4.7-22.1-2.4-28.1-18-48.9-5-6.7-27.8-5.3-38-3.4-12.1 2.7-25.3 19.1-25.3 19.1 10.4 56.3 18.9 50.5 22.2 69s-.1 26.3 20.9 26.3 35.7-9 28.8-27.1c11.6-3.7 13.8-14.1 9.4-35zM126.5 328.4c-4.4 48 12 45.7 60.4 26.9z"
@@ -357,7 +357,7 @@
         transform="rotate(-18.1 318.119 387.354)"
       ></ellipse>
     </g>
-    <g data-name="Layer 21">
+    <g data-name="Layer 21" class="crocodile">
       <path
         fill="#4452f2"
         d="M290.1 1034.3a76.2 76.2 0 01-75-62.7c-6-33.7-12-60.4-20.5-82.8l140-51.3c6.6 22.6 16.7 52.1 29.3 102 12.1 48.1-24.2 94.8-73.8 94.8z"
@@ -981,7 +981,7 @@
       d="M537.2 82.7a20.5 20.5 0 00-17 8.9 43.1 43.1 0 00-17.6-3.8 42.6 42.6 0 00-27.9 10.3h82.5a20.8 20.8 0 00-20-15.4z"
       data-name="Layer 13"
     ></path>
-    <g data-name="Layer 12">
+    <g data-name="Layer 12" class="bat-move">
       <path
         fill="#808aff"
         d="M1519.2 121.3c-.1.2-.3.3-.4.2-3.1-2.2-4.5-1.8-5.3-.7s-.8 2.9-.5 5.5a1.1 1.1 0 01-.7 1.2c-.2.1-.5.1-.6-.1-2.1-2.1-3.2-3.1-4.7-3.4s-4.3.5-6.1 3.5l-6-6.5a20.1 20.1 0 007.5-11.6c.8-3.7 1.9-3.4 6-.1a55.3 55.3 0 0110.8 11.6.3.3 0 010 .4zM1465.7 131.6a.7.7 0 00.6-.1c2-2.6 3.5-2.8 4.6-2.3s1.7 1.9 2.2 3.7a.9.9 0 00.9.6c.2-.1.5-.2.6-.5.9-1.9 1.5-2.8 2.6-3.5a4.6 4.6 0 015.1.5l2.7-5.6a15.3 15.3 0 01-8-7.1c-1.9-3.2-2.7-2.7-5.4 1.2a37.8 37.8 0 00-6 12.6.4.4 0 00.1.5z"
@@ -1504,6 +1504,54 @@ export default Random;
   }
   to {
     transform: scale(1.7);
+  }
+}
+
+.crocodile {
+  animation: crocodile-move 3s ease-in infinite;
+}
+
+@keyframes crocodile-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.figure {
+  animation: figure-move 5s ease-in infinite;
+}
+
+@keyframes figure-move {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.bat-move {
+  animation: bat-move 3s ease-in infinite;
+}
+
+@keyframes bat-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 </style>
