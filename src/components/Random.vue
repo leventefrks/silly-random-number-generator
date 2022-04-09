@@ -970,9 +970,11 @@
       <path
         fill="#4ab0ff"
         d="M1143 766.4l-14.1-7.9a6.1 6.1 0 01-3.1-5.3v-1a6.1 6.1 0 016.1-6.2 6.1 6.1 0 015.9 4.3z"
+        class="water"
       ></path>
       <path
         fill="#66bcff"
+        class="water"
         d="M1124.9 804.3l-9.1 6.7a4.4 4.4 0 01-4.3.5l-.6-.3a4.4 4.4 0 01-2.3-5.7 4.4 4.4 0 014.4-2.5z"
       ></path>
     </g>
@@ -1579,6 +1581,22 @@ export default Random;
     }
     100% {
       transform: translateY(-15px);
+    }
+  }
+
+  .water {
+    animation: water-move 2s ease infinite backwards;
+  }
+
+  @keyframes water-move {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-16px, -16px);
     }
   }
 }
