@@ -1331,7 +1331,7 @@
   >
     <div class="sm:max-w-xl mx-auto">
       <div class="min-w-xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
-        <div class="px-4 sm:px-16 py-4 sm:py-7 space-y-4">
+        <div class="px-4 sm:px-10 py-4 sm:py-7 space-y-4">
           <h2 class="text-xl md:text-3xl text-center text-white">
             Generate your random number
           </h2>
@@ -1347,7 +1347,7 @@
               It's time to study! YAY! 😛
             </h3>
           </div>
-          <div class="w-40 mx-auto rounded-md bg-gray-50">
+          <div class="w-24 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
               placeholder="from"
@@ -1356,7 +1356,7 @@
               :class="isError ? 'border-red-500' : 'border-transparent'"
             />
           </div>
-          <div class="w-40 mx-auto rounded-md bg-gray-50">
+          <div class="w-24 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
               placeholder="to"
