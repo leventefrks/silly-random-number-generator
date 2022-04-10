@@ -1352,7 +1352,8 @@
               type="text"
               placeholder="Min. number"
               v-model="min"
-              class="w-full border-none bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300"
+              class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
+              :class="isError ? 'border-red-500' : 'border-transparent'"
             />
           </div>
           <div class="w-40 mx-auto rounded-md bg-gray-50">
@@ -1360,19 +1361,20 @@
               type="text"
               placeholder="Max. number"
               v-model="max"
-              class="w-full border-none bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300"
+              class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
+              :class="isError ? 'border-red-500' : 'border-transparent'"
             />
           </div>
           <button
             @click="onRandomNumber"
-            class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-purple-300 bg-purple-500 hover:bg-purple-400 text-white"
+            class="w-full px-5 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block bg-purple-600 hover:bg-purple-500 text-white"
           >
             Woohoo, here's your number!
           </button>
           <button
             v-if="randomNumber"
             @click="onReset"
-            class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block border-b border-red-300 bg-red-500 hover:bg-red-400 text-white"
+            class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block bg-red-600 hover:bg-red-500 text-white"
             :class="{ 'fade-in': randomNumber }"
           >
             Reset
@@ -1386,7 +1388,7 @@
           </p>
           <p
             v-if="isError"
-            class="mt-6 text-center text-md sm:text-xl font-semibold text-red-600"
+            class="mt-6 text-center text-md sm:text-xl font-semibold text-red-500"
             :class="{ shake: isError }"
           >
             Oooops, Fanni! Something went wrong!
