@@ -102,6 +102,7 @@
       fill="#6874f7"
       d="M1525.8 824.6a34.7 34.7 0 00-66.9-12.1 33.3 33.3 0 00-7.8-.9 36.3 36.3 0 00-27.8 13h102.5z"
       data-name="Layer 23"
+      class="cloud"
     ></path>
     <g data-name="Layer 22" class="figure">
       <path
@@ -1327,9 +1328,9 @@
   </svg>
 
   <div
-    class="min-h-screen flex flex-col items-center justify-center fixed z-50 inset-0 overflow-y-auto h-full w-full"
+    class="min-h-screen h-full w-full flex items-center justify-center fixed z-50 inset-0 overflow-y-auto"
   >
-    <div class="sm:max-w-xl mx-auto">
+    <div class="sm:max-w-xl">
       <div class="min-w-xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
         <div class="px-4 sm:px-10 py-4 sm:py-7 space-y-4">
           <h2 class="text-xl md:text-3xl text-center text-white">
@@ -1352,7 +1353,7 @@
               type="text"
               placeholder="from"
               v-model="min"
-              class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
+              class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
               autofocus
             />
@@ -1362,7 +1363,7 @@
               type="text"
               placeholder="to"
               v-model="max"
-              class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
+              class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
             />
           </div>
@@ -1408,9 +1409,9 @@ const Random = {
 
   data() {
     return {
-      randomNumber: null,
       min: null,
       max: null,
+      randomNumber: null,
       isError: false,
       isToggle: false,
     };
@@ -1560,7 +1561,7 @@ export default Random;
       transform: rotate(0);
     }
     100% {
-      transform: rotate(3deg);
+      transform: rotate(6deg);
     }
   }
 
