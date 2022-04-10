@@ -1263,7 +1263,7 @@
         d="M960.6 175.9a37.7 37.7 0 00-12.6 3.7c-2.9 1.6.2 4.8 8.8 5.6s17.4-1.2 20.8-1.6 3-.4 5.4 1.6 4.3 3.4 4.1 1.5-.9-3.6.2-5.4 1.6-2.8 1.4-4.3-.7-1.1-2.3.2a30.2 30.2 0 01-4.7 3.5c-.8.4-.9-.3-3.3-1.4a29.6 29.6 0 00-17.8-3.4z"
       ></path>
     </g>
-    <g data-name="Layer 9">
+    <g data-name="Layer 9" class="trumpet">
       <path
         fill="#ffe75c"
         d="M604.7 175.3l-15.7 1.5a7.7 7.7 0 00-3.5 1.2c-5.6 3.4-6.7 5.7-6.7 5.7l9.3 9 18.5-14.6z"
@@ -1338,7 +1338,7 @@
           <div class="text-center text-white">
             <h3
               v-if="randomNumber"
-              class="text-5xl text-green-400 font-semibold"
+              class="text-4xl text-green-400 font-semibold"
               :class="{ grow: isToggle }"
             >
               {{ randomNumber }}
@@ -1350,7 +1350,7 @@
           <div class="w-40 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
-              placeholder="Min. number"
+              placeholder="from"
               v-model="min"
               class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
@@ -1359,7 +1359,7 @@
           <div class="w-40 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
-              placeholder="Max. number"
+              placeholder="to"
               v-model="max"
               class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
@@ -1508,15 +1508,18 @@ export default Random;
 
 @media only screen and (min-device-width: 1024px) {
   .grow {
-    animation: grow 500ms ease;
+    animation: grow 500ms ease-in;
   }
 
   @keyframes grow {
-    from {
-      transform: scale(0);
+    0% {
+      transform: scale(1.3);
     }
-    to {
-      transform: scale(1.7);
+    50% {
+      transform: scale(3);
+    }
+    100% {
+      transform: scale(1.3);
     }
   }
 
