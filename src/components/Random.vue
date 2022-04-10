@@ -1354,6 +1354,7 @@
               v-model="min"
               class="w-full bg-transparent p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
+              autofocus
             />
           </div>
           <div class="w-24 mx-auto rounded-md bg-gray-50">
