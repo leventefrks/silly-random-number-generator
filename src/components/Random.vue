@@ -1372,7 +1372,7 @@
             Woohoo, here's your number!
           </button>
           <button
-            v-if="randomNumber"
+            v-if="isError && min && max"
             @click="onReset"
             class="w-full px-4 sm:px-9 py-2 sm:py-4 text-base focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-600 focus:outline-none transition-colors duration-200 rounded-md block bg-red-600 hover:bg-red-500 text-white"
             :class="{ 'fade-in': randomNumber }"
