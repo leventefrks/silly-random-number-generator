@@ -2,7 +2,9 @@
 
 Created for a family member who's studying at the uni
 
-(Demo)[https://random-nr-generator.netlify.app/]
+## Live Version
+
+[Demo](https://random-nr-generator.netlify.app/)
 
 ## Tech Stack
 
