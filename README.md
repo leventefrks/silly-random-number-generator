@@ -1,24 +1,9 @@
-# random-site
+# Silly random Number Generator
 
-## Project setup
-```
-npm install
-```
+Created for a family member who's studying at the uni
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Tech Stack
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Vue.js
+- Yup for validation
+- TailwindCSS for styling

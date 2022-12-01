@@ -1351,8 +1351,7 @@
           <div class="w-24 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
-              placeholder="from"
-              v-model="min"
+              v-model.number="min"
               class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
               autofocus
@@ -1361,8 +1360,7 @@
           <div class="w-24 mx-auto rounded-md bg-gray-50">
             <input
               type="text"
-              placeholder="to"
-              v-model="max"
+              v-model.number="max"
               class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
             />
@@ -1404,6 +1402,13 @@
 </template>
 
 <script>
+import * as yup from 'yup';
+
+const loginFormSchema = yup.object().shape({
+  min: yup.number().max(1000).required().positive().integer(),
+  max: yup.number().max(1000).required().positive().integer(),
+});
+
 const Random = {
   name: 'Random',
 
@@ -1418,39 +1423,32 @@ const Random = {
   },
 
   methods: {
-    onRandomNumber() {
+    isValid(min, max) {
+      const result = loginFormSchema.isValid({
+        min,
+        max,
+      });
+      return result;
+    },
+
+    async onRandomNumber() {
       this.randomNumber = null;
 
       setTimeout(() => {
         this.isToggle = false;
       }, 200);
 
-      const min = parseInt(this.min, 10);
-      const max = parseInt(this.max, 10);
+      const isValid = await this.isValid(this.min, this.max);
 
-      if (this.isInvalid(min, max)) {
+      if (!isValid) {
         this.isError = true;
-        this.randomNumber = null;
         this.isToggle = false;
         return;
       }
 
-      this.generateNumber(min, max);
+      this.generateNumber(this.min, this.max);
       this.isToggle = true;
       this.isError = false;
-    },
-
-    isInvalid(min, max) {
-      return (
-        min < 0 ||
-        max < 0 ||
-        !min ||
-        !max ||
-        min > max ||
-        min === max ||
-        min > 1000 ||
-        max > 1000
-      );
     },
 
     generateNumber(min, max) {
