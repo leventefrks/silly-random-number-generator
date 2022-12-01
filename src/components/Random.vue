@@ -1331,7 +1331,7 @@
     class="min-h-screen h-full w-full flex items-center justify-center fixed z-50 inset-0 overflow-y-auto"
   >
     <div class="sm:max-w-xl">
-      <div class="min-w-xl flex flex-col bg-indigo-700 shadow-xl rounded-lg">
+      <div class="min-w-xl flex flex-col bg-indigo-700 rounded-lg">
         <div class="px-4 sm:px-10 py-4 sm:py-7 space-y-4">
           <h2 class="text-xl md:text-3xl text-center text-white">
             Generate your random number
