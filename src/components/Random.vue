@@ -1352,6 +1352,7 @@
             <input
               type="text"
               v-model.number="min"
+              placeholder="min"
               class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
               autofocus
@@ -1361,6 +1362,7 @@
             <input
               type="text"
               v-model.number="max"
+              placeholder="max"
               class="w-full bg-transparent p-2 sm:p-4 text-base font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 focus:outline-none transition-colors duration-200 rounded-md block border"
               :class="isError ? 'border-red-500' : 'border-transparent'"
             />
