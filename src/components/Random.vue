@@ -1415,7 +1415,6 @@ const Random = {
       max: null,
       randomNumber: null,
       isError: false,
-      isToggle: false,
     };
   },
 
@@ -1427,30 +1426,22 @@ const Random = {
 
   methods: {
     isValid(min, max) {
-      const result = loginFormSchema.isValid({
+      return loginFormSchema.isValid({
         min,
         max,
       });
-      return result;
     },
 
     async onRandomNumber() {
       this.randomNumber = null;
-
-      setTimeout(() => {
-        this.isToggle = false;
-      }, 200);
-
       const isValid = await this.isValid(this.min, this.max);
 
       if (!isValid) {
         this.isError = true;
-        this.isToggle = false;
         return;
       }
 
       this.generateNumber(this.min, this.max);
-      this.isToggle = true;
       this.isError = false;
     },
 
@@ -1463,7 +1454,6 @@ const Random = {
       this.max = null;
       this.randomNumber = null;
       this.isError = null;
-      this.isToggle = false;
     },
   },
 };
